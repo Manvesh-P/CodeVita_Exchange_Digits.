@@ -1,0 +1,30 @@
+# CodeVita Exchange digits.
+
+from itertools import permutations
+
+list1 = []
+list2 = []
+
+a, b = map(str, input("Enter the values of a and b ").split(" "))
+
+if len(b) > len(a):
+    print("not possible")
+    
+else:
+    n = list(permutations(a))
+    for i in range(0, len(n)):
+        list1.append(int(''.join(n[i])))
+        
+    # print(n)
+    # print(list1)
+
+    for i in range(0, len(list1)):
+        if list1[i] > int(b):
+            list2.append(list1[i])
+        
+    # print(list2)
+    
+    if list2 == []:
+        print("-1")
+    else:
+        print(min(list2))
